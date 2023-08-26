@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface EmployeeService {
     // Save an employee
-    void addEmployee(Employee employee);
+    Employee addEmployee(Employee employee);
 
     // Get all employee. In production, try to paginate the response for scalability
     List<Employee> getAllEmployees();
