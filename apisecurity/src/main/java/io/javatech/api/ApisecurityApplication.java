@@ -1,4 +1,4 @@
-package io.javatech.apisecurity;
+package io.javatech.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

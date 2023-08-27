@@ -1,10 +1,10 @@
 //implement the service by using methods created in the repository
 
-package io.javatech.apisecurity.service.impl;
+package io.javatech.api.service.impl;
 
-import io.javatech.apisecurity.model.Employee;
-import io.javatech.apisecurity.repository.InMemoryEmployeeRepository;
-import io.javatech.apisecurity.service.EmployeeService;
+import io.javatech.api.model.Employee;
+import io.javatech.api.repository.InMemoryEmployeeRepository;
+import io.javatech.api.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

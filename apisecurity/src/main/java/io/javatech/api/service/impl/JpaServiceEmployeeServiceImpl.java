@@ -1,8 +1,8 @@
-package io.javatech.apisecurity.service.impl;
+package io.javatech.api.service.impl;
 
-import io.javatech.apisecurity.model.Employee;
-import io.javatech.apisecurity.repository.JpaEmployeeRepository;
-import io.javatech.apisecurity.service.EmployeeService;
+import io.javatech.api.model.Employee;
+import io.javatech.api.repository.JpaEmployeeRepository;
+import io.javatech.api.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

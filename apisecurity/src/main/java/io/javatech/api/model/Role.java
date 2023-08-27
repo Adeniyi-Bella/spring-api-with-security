@@ -1,4 +1,4 @@
-package io.javatech.apisecurity.model;
+package io.javatech.api.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,12 +12,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity //To Persist the DB. JPA immediately creates a table for the DB
-public class Employee {
+@Entity
+public class Role {
     @Id
     @GeneratedValue
-    private Integer id;
-    private String firstName;
-    private String lastName;
-    private String email;
+    private Long id;
+    private String code;
+    private String name;
 }

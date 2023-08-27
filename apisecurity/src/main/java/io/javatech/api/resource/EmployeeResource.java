@@ -1,7 +1,7 @@
-package io.javatech.apisecurity.resource;
+package io.javatech.api.resource;
 
-import io.javatech.apisecurity.model.Employee;
-import io.javatech.apisecurity.service.EmployeeService;
+import io.javatech.api.model.Employee;
+import io.javatech.api.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +32,7 @@ public class EmployeeResource {
 
     @PostMapping
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee){
-        employee.setId(employeeService.getAllEmployees().size() + 1);
+//        employee.setId(employeeService.getAllEmployees().size() + 1);
         return ResponseEntity.created(getLocation(employee.getId())).body(employeeService.addEmployee(employee));
     }
 
@@ -48,7 +48,8 @@ public class EmployeeResource {
         return ResponseEntity.ok(employeeService.deleteById(id));
     }
 
-    private URI getLocation(Integer id) {
+    //protected so that it can be used in the same package
+    protected static URI getLocation(Integer id) {
         //creates a path from the current request and pass in the id
         return fromCurrentRequest().path("{id}").buildAndExpand(id).toUri();
     }

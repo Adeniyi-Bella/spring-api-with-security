@@ -1,7 +1,7 @@
-package io.javatech.apisecurity.service;
+package io.javatech.api.service;
 
 
-import io.javatech.apisecurity.model.Employee;
+import io.javatech.api.model.Employee;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
-package io.javatech.apisecurity.repository;
+package io.javatech.api.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import io.javatech.apisecurity.model.Employee;
+import io.javatech.api.model.Employee;
 import org.springframework.stereotype.Repository;
 
 import static java.lang.Boolean.TRUE;

@@ -1,4 +1,4 @@
-package io.javatech.apisecurity;
+package io.javatech.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

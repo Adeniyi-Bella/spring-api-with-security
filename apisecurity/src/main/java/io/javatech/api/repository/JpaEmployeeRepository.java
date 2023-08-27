@@ -1,6 +1,6 @@
-package io.javatech.apisecurity.repository;
+package io.javatech.api.repository;
 
-import io.javatech.apisecurity.model.Employee;
+import io.javatech.api.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
