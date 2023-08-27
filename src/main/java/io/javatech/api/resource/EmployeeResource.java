@@ -4,6 +4,7 @@ import io.javatech.api.model.Employee;
 import io.javatech.api.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -30,6 +31,7 @@ public class EmployeeResource {
         return ResponseEntity.ok(employeeService.findById(id));
     }
 
+    @PreAuthorize("hasRole('ADMIN')") //post request must come from an admin user
     @PostMapping
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee){
 //        employee.setId(employeeService.getAllEmployees().size() + 1);

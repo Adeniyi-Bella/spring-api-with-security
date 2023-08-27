@@ -29,23 +29,18 @@ public class WebSecurityConfiguration {
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.authenticationProvider(authenticationProvider); //define an authentication provider
 
-        http.csrf().disable().authorizeRequests(request -> request
-                        .requestMatchers("/api/accounts/**").permitAll()
-                        .requestMatchers("/public/**").permitAll()
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .anyRequest().authenticated())
-                .httpBasic(withDefaults())
+
+
+        http.csrf().disable()
+                .authorizeHttpRequests()
+                .requestMatchers("/api/accounts/**").permitAll()//permit all requests to this endpoint
+                .requestMatchers("/**").authenticated() //requests must come from an authenticated user
+                .anyRequest()
+                .hasAnyRole("USER", "ADMIN")
+                .and()
+                .httpBasic(withDefaults()) //a simple way of http authentication without token and the rest
                 .sessionManagement()
                 .sessionCreationPolicy(STATELESS);
-
-
-//        http.csrf().disable().authorizeHttpRequests()
-//                .requestMatchers("/api/accounts/**").permitAll();
-                //authenticate everything else if they have this setup
-//                .anyRequest().hasAnyRole("USER", "ADMIN")
-//                .and().httpBasic(withDefaults()) //a simple way of http authentication without token and the rest
-//                .sessionManagement()
-//                .sessionCreationPolicy(STATELESS);
                 return http.build();
     }
 }
