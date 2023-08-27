@@ -6,10 +6,12 @@ import io.javatech.apisecurity.model.Employee;
 import io.javatech.apisecurity.repository.InMemoryEmployeeRepository;
 import io.javatech.apisecurity.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
+@Qualifier(value = "inMemory")
 @RequiredArgsConstructor
 public class InMemoryEmployeeServiceImpl implements EmployeeService {
     private final InMemoryEmployeeRepository inMemoryEmployeeRepository;
